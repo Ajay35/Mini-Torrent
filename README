@@ -1,0 +1,11 @@
+Mini-Bittorrent has following files
+
+tracker.cpp (server)
+client.cpp (peer)
+
+Client acts as single peer capable of doing following functions
+	1) share: sharing file with tracker to become a seeder for that file.
+				and also generate .mtorrent file to ditribute by saving tracker IP,file name and SHA1 of that file.
+	2) get:  Opening .mtorrent ,reading the file data from the file and making request to tracker for the IP of seeder.
+			 Tracker returns IP and port of the seeder to requesting peer.Peer then establishes connection with seeder 
+			 (peer) and receives the file.As of now only single seeder is chosen for file chunk shring. 
